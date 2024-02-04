@@ -1,0 +1,2166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gmail Clone</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="w-screen max-h-screen text-google_fontColor overflow-hidden">
+    <div class="w-full max-h-screen grid bg-google_slideOut grid-rows-[64px,48px,1fr,10px] grid-cols-[68px,256px,1fr,56px]">
+        <div class="w-full h-full col-start-1 col-span-1 bg-google_side">
+            <div class="w-full h-full flex justify-center items-center">
+                <div class="h-12 w-12 flex justify-center items-center hover:bg-google_hoverBG rounded-full cursor-pointer">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full col-start-1 col-span-1 row-start-2 row-span-3 bg-google_side">
+            <div class="w-full h-full flex items-center flex-col text-xl gap-5 pt-4">
+                <div class="flex items-center flex-col text-xl">
+                    <div class="w-[50px] h-[30px] bg-[#d3e3fd] cursor-pointer flex items-center justify-center rounded-full">
+                        <i class="fa-solid fa-envelope text-[#041e49] text-[16px]"></i>
+                    </div>
+                    <p class="text-sm font text-[#041e49] font-semibold">Mail</p>
+                </div>
+                <div class="flex items-center flex-col text-xl">
+                    <div class="w-[50px] h-[30px] hover:bg-google_hoverBG cursor-pointer flex items-center justify-center rounded-full">
+                        <i class="fa-regular fa-message text-[16px]"></i>
+                    </div>
+                    <p class="text-sm font">Chat</p>
+                </div>
+                <div class="flex items-center flex-col text-xl">
+                    <div class="w-[50px] h-[30px] hover:bg-google_hoverBG cursor-pointer flex items-center justify-center rounded-full">
+                        <i class="fa-solid fa-video text-[16px]"></i>
+                    </div>
+                    <p class="text-sm font">Meet</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full col-start-2 col-span-1 bg-google_slideOut">
+            <div class="w-full h-full flex items-center pl-[22px]">
+                <img src="/resource/logo_gmail_lockup_default_1x_r5.png" alt="" class="h-[44px]">
+            </div>
+        </div>
+        <div class="w-full h-full col-start-2 col-span-1 row-start-2 row-span-3 bg-google_slideOut pl-[15px] pr-[15px]">
+            <div class="w-full h-full mt-3">
+                <div class="w-[140px] h-[56px] rounded-2xl bg-[#c2e7ff] text-black flex items-center justify-center gap-3 hover:shadow-xl cursor-pointer">
+                    <i class="fa-solid fa-pen"></i>
+                    <p class="font">Compose</p>
+                </div>
+                <div class="w-full text-sm flex flex-col mt-3.5">
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] bg-[#d3e3fd] px-4 py-1.5 items-center rounded-full cursor-pointer text-black">
+                        <i class="fa-solid fa-inbox"></i>
+                        <p>Inbox</p>
+                        <p class="text-end">688</p>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Snooze</p>
+                        <p class="text-end"></p>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <p>Sent</p>
+                        <p class="text-end"></p>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-regular fa-star"></i>
+                        <p>Starred</p>
+                        <p class="text-end"></p>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                        <p>Important</p>
+                        <p class="text-end"></p>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-regular fa-file"></i>
+                        <p>Draft</p>
+                        <p class="text-end"></p>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-regular fa-trash-can"></i>
+                        <p>Trash</p>
+                        <p class="text-end"></p>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <p>More</p>
+                        <p class="text-end"></p>
+                    </div>
+
+                </div>
+                <div class="w-full text-sm flex flex-col mt-3.5">
+                    <div class="w-full grid grid-cols-[1fr,35px] px-4 py-1.5 items-center rounded-full text-lg">
+                        <p class="font-bold">Labels</p>
+                        <div class="text-end hover:bg-google_hoverBG rounded-full w-[35px] h-[35px] flex items-center justify-center cursor-pointer">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer group">
+                        <i class="fa-solid fa-tag text-orange-400"></i>
+                        <p>Office</p>
+                        <div class="w-full h-full justify-end hidden group-hover:flex">
+                            <div class="text-end hover:bg-google_hoverBG rounded-full flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer group">
+                        <i class="fa-solid fa-tag text-pink-400"></i>
+                        <p>Personal</p>
+                        <div class="w-full h-full justify-end hidden group-hover:flex">
+                            <div class="text-end hover:bg-google_hoverBG rounded-full flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer group">
+                        <i class="fa-solid fa-tag text-green-400"></i>
+                        <p>Travel</p>
+                        <div class="w-full h-full justify-end hidden group-hover:flex">
+                            <div class="text-end hover:bg-google_hoverBG rounded-full flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer group">
+                        <i class="fa-solid fa-tag text-red-600"></i>
+                        <p>Coding</p>
+                        <div class="w-full h-full justify-end hidden group-hover:flex">
+                            <div class="text-end hover:bg-google_hoverBG rounded-full flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full grid grid-cols-[30px,1fr,50px] hover:bg-google_hoverBG px-4 py-1.5 items-center rounded-full cursor-pointer">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <p>More</p>
+                        <p class="text-end"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full col-start-3 col-span-2">
+            <div class="flex w-full h-full items-center justify-between pr-4">
+                <div class="w-3/5 max-w-[720px] h-[46px] flex items-center justify-between bg-google_side rounded-full p-3">
+                    <i class="fa-solid fa-magnifying-glass cursor-pointer hover:bg-google_hoverBG rounded-full p-2"></i>
+                    <input class="grow bg-google_side outline-none focus:ring-0" placeholder="Search in mail" type="text">
+                    <i class="fa-solid fa-sliders cursor-pointer hover:bg-google_hoverBG rounded-full p-2"></i>
+                </div>
+                <div class="flex items-center gap-2 pl-4">
+                    <div class=" bg-google_side rounded-full px-5 py-3 flex items-center text-g_fonts gap-3 text-sm hover:bg-[#CDD4DF] hover:shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-circle text-green-600"></i>
+                        <p class="font-semibold">Active</p>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <i class="fa-regular fa-circle-question hover:bg-google_hoverBG rounded-full p-2 cursor-pointer"></i>
+                    <i class="fa-solid fa-gear hover:bg-google_hoverBG rounded-full p-2 cursor-pointer"></i>
+                    <div class="text-xl cursor-pointer hover:bg-google_hoverBG rounded-full p-2">
+                        <img alt="" src="https://ssl.gstatic.com/gb/images/bar/al-icon.png">
+                    </div>
+                    <div class="w-[40px] h-[40px] rounded-full bg-sky-900 text-white flex justify-center items-center text-2xl antialiased cursor-pointer">
+                        <p>J</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full col-start-4 col-span-1 row-start-2 row-span-3">
+            <div class="flex items-center p-2 flex-col gap-2 col-start-2 col-span-1 row-start-2 row-span-1">
+                <div class="w-10 p-3 rounded-full hover:bg-google_hoverBG cursor-pointer" >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/1024px-Google_Calendar_icon_%282020%29.svg.png" alt="">
+                </div>
+                <div class="w-10 p-3 rounded-full hover:bg-google_hoverBG cursor-pointer" >
+                    <img src="/resource/img.png" alt="">
+                </div>
+                <div class="w-10 p-3 rounded-full hover:bg-google_hoverBG cursor-pointer" >
+                    <img src="/resource/img_1.png" alt="">
+                </div>
+                <div class="w-10 p-3 rounded-full hover:bg-google_hoverBG cursor-pointer" >
+                    <img src="/resource/img_2.png" alt="">
+                </div>
+                <div class="w-6 border-t-2 border-gray-300 my-3">
+                </div>
+                <div class="w-10 h-10 rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer" >
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white w-full h-full col-start-3 col-span-1 row-start-2 row-span-1 rounded-t-2xl">
+            <div class="flex items-center justify-between w-full h-full">
+                <div class="flex items-center justify-center">
+                    <div class="flex items-center justify-center ml-4 h-[40px]">
+                        <div class="hover:bg-g_BGGray rounded h-full px-1.5 flex items-center cursor-pointer">
+                            <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                        </div>
+                        <div class="hover:bg-g_BGGray rounded h-full px-0.5 flex items-center cursor-pointer">
+                            <i class="fa-solid fa-sort-down text-xs mb-[2px]"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center h-[40px] w-[40px] text-sm hover:bg-g_BGGray rounded-full cursor-pointer ml-1">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                    <div class="flex items-center justify-center h-[40px] w-[40px] text-sm hover:bg-g_BGGray rounded-full cursor-pointer">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-2 mr-4 text-sm">
+                    <div class="hover:bg-g_BGGray h-[40px] px-1.5 flex items-center justify-center cursor-pointer rounded-lg">
+                        <p>1-50 of 28,932</p>
+                    </div>
+                    <div class="hover:bg-g_BGGray h-[40px] w-[40px] px-1.5 flex items-center justify-center cursor-pointer rounded-full">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                    <div class="hover:bg-g_BGGray h-[40px] w-[40px] px-1.5 flex items-center justify-center cursor-pointer rounded-full">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full grow col-start-3 col-span-1 row-start-3 row-span-1 overflow-y-scroll rounded-b-2xl bg-white">
+            <div class="w-full bg-white">
+                <div class="mailsTop w-full h-[56px] flex">
+                    <div class="w-[230px] h-[56px] flex flex-col  items-center text-[#0b57d0] cursor-pointer hover:bg-google_hoverBG">
+                        <div class="w-full h-full flex">
+                            <div class="w-[56px] h-full flex items-center justify-center">
+                                <i class="fa-solid fa-inbox"></i>
+                            </div>
+                            <div class="grow h-full flex items-center pr-4">
+                                <p>Primary</p>
+                            </div>
+                        </div>
+                        <div class="w-[230px] border-[#0b57d0] border-b-2"></div>
+                    </div>
+                    <div class="w-[230px] h-[56px] flex flex-col  items-center cursor-pointer hover:bg-google_hoverBG">
+                        <div class="w-full h-full flex">
+                            <div class="w-[56px] h-full flex items-center justify-center">
+                                <i class="fa-solid fa-tag"></i>
+                            </div>
+                            <div class="grow h-full flex flex-col justify-center pr-4">
+                                <div class="flex gap-2">
+                                    <p>Promotions</p>
+                                    <p class="text-xs flex items-center justify-center rounded-full bg-green-700 text-white px-2 py-0">
+                                        9 new</p>
+                                </div>
+                                <p class="text-xs text-gray-400">Royal Enfield, Nippon...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[230px] h-[56px] flex flex-col  items-center cursor-pointer hover:bg-google_hoverBG">
+                        <div class="w-full h-full flex">
+                            <div class="w-[56px] h-full flex items-center justify-center">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <div class="grow h-full flex flex-col justify-center pr-4">
+                                <div class="flex gap-2">
+                                    <p>Social</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[230px] h-[56px] flex flex-col  items-center cursor-pointer hover:bg-google_hoverBG">
+                        <div class="w-full h-full flex">
+                            <div class="w-[56px] h-full flex items-center justify-center">
+                                <i class="fa-solid fa-message"></i>
+                            </div>
+                            <div class="grow h-full flex flex-col justify-center pr-4">
+                                <div class="flex gap-2">
+                                    <p>Forums</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-white">
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailsCont grid grid-cols-[30px,30px,30px,200px,1fr,150px] items-center group border-y-[1px] hover:border-x-[2px] h-[40px] box-border cursor-context-menu">
+                    <div class="flex items-center justify-center">
+                        <input class="enabled:hover:border-gray-400 disabled:opacity-75" type="checkbox">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-star text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-play text-sm hover:text-orange-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold overflow-hidden text-black">
+                        <p>BSE ALERTS</p>
+                    </div>
+                    <div class="mailTitle flex items-center font-bold text-black overflow-hidden">
+                        <p class="font-bold truncate">Details of your BSE trades <span class=""> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id efficitur nisl.</span></p>
+                    </div>
+                    <div class="mailback flex items-center font-bold overflow-hidden text-black justify-end mr-3 gap-5">
+                        <div class=" flex items-center justify-end group-hover:hidden gap-5">
+                            <div class="attachment"><i class="fa-solid fa-paperclip"></i></div>
+                            <div class="time"> 12:55 PM</div>
+                        </div>
+                        <div class="hidden items-center justify-end mr-2 group-hover:flex">
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <div class="w-[30px] h-[30px] rounded-full hover:bg-google_hoverBG flex items-center justify-center cursor-pointer">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-full bg-white border-t-[1px]">
+                <div class="p-[16px] w-full flex items-center justify-between">
+                    <div class="h-[50px] min-h-full gap-2 flex flex-col justify-center">
+                        <div>
+                            <div class="w-[250px] h-[6px] bg-gray-200 rounded-full">
+                                <div class="w-[100px] h-[6px] bg-gray-400 rounded-full">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-center text-gray-500">
+                            <p class="text-xs">Conversations 4.8 GB of 10 GB used</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                    </div>
+                    <div class="h-[50px] min-h-full gap-2 flex flex-col">
+                        <p class="text-sm"><span class="hover:underline cursor-pointer">Terms</span> · <span class="hover:underline cursor-pointer">Privacy</span> · <span class="hover:underline cursor-pointer">Program Policies</span></p>
+                    </div>
+                    <div class="h-[50px] min-h-full gap-2 flex flex-col text-sm justify-center">
+                        <p>Last account activity: 0 minutes ago</p>
+                        <p class="cursor-pointer hover:underline">Details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/dc10f11ad9.js" crossorigin="anonymous"></script>
+</body>
+</html>
